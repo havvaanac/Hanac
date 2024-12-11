@@ -13,7 +13,16 @@ Steps;
 Expected Result:
   Adres başarıyla kayıt edilir ve listeye eklenir. Başarılı ekran mesajı görüntülenir.
 Actual result: Unsuccessful
------------ Ekran mesajı görüntülenmedi
+
+Hata Başlığı: Test Case 1
+Hata Detayı: Adres başarıyla kayıt edildiğinde ekranda bilgilendirici mesaj gösterilmesi gerekirken gösterilmemekte ve ülke değiştiğinde
+telefon girişi alanlarında format bozuluyor.	
+Beklenen Sonuç: Adres başarıyla eklendiğinde bilgilendirici ekran mesajı gösterilmeli
+		Ülke bazında Telefon Formatı konulmalı ve ülke değiştiğinde formata göre giriş kabul edilmeli
+Gerçek Sonuç: 	Adres başarıyla kayıt edildiğinde ekranda bilgilendirici kullanıcı mesajı gösterilmiyor.
+		Ülke KKTC seçildiğinde Telefon Formatı bozulmakta ve textbox a random rakam girişine izin verilmektedir. 
+Ciddiyet Seviyesi: Orta
+
 
 Test Case 2: Eksik bilgiyle Adres Kaydetme
 Steps;
@@ -33,6 +42,7 @@ Steps;
 
 Expected Result:
   Adresin başarıyla güncellenir ve değişiklikler listeye yansır.
+Actual Result: Success
 
 Test Case 4: Adres Silme
 Steps:
@@ -41,6 +51,7 @@ Steps:
 
 Expected Result:
 Adres başarıyla silinir ve liste güncellenir.
+Actual Result: Success
 
 Test Case 5: Maksimum Adres Ekleme Kontrolü
 Steps:
@@ -49,15 +60,28 @@ Steps:
 
 Expected Result:
 Sistem, “Maksimum adres sayısına ulaştınız” gibi bir hata mesajı gösterir ve yeni adres eklenmesine izin vermez.
+Actual Result: Unsuccessful
+
+Hata Başlığı: Test Case 5
+Hata Detayı: 10 ayrı adres tanımladım ve hepsini kabul ederek ekranda listeledi.
+Beklenen Sonuç: Adres ekleme maximum değerinde ekran kontrole uygun uyarı mesajı vermelidir.
+Gerçek Sonuç: Adres ekleme maximum değeri bulunmamakta ve uyarı mesajı verilmemektedir.
+Ciddiyet Seviyesi: Orta
 
 Test Case 6: Veri Doğrulama
 Steps:
-	1.	Posta kodu alanına geçersiz bir veri (örneğin harf) girin.
+	1.	Ad ve Soyad alanına geçersiz bir veri (örneğin özel karakter) girin.
 	2.	“Kaydet” butonuna tıklayın.
 
 Expected Result:
-Sistem, yalnızca geçerli veri formatlarının kabul edildiğini belirten bir hata mesajı gösterir.
+Sistem, yalnızca geçerli veri formatlarının kabul edildiğini belirten bir hata mesajı gösterir veya özel karakter girişine izin verilmez.
+Actual Result: Unsuccessful
 
+Hata Başlığı: Test Case 6
+Hata Detayı: Adres Adı - Ad - Soyad alanlarında özel karakter girişine izin verilmektedir.
+Beklenen Sonuç: Özel karaktere izin verilmemeli veya özel karakter girişinde kullanıcıya uyarı mesajı verilerek doğru veri girişi için zorlanmalı
+Gerçek Sonuç: Özel karakter girişi yapılarak adres kayıt edildi ve adres listesinde görüntülendi.
+Ciddiyet Seviyesi: Orta
 
 Test Case 7: Farklı Tarayıcı ve Cihaz Uyumluluğu
 Steps:
@@ -66,6 +90,7 @@ Steps:
 
 Expected Result:
 Adres Defteri fonksiyonu tüm tarayıcı ve cihazlarda sorunsuz çalışır.
+Actual Result: Success
 
 
 Test Case 8: Adresleri Listeleme
@@ -75,6 +100,7 @@ Steps:
 
 Expected Result:
 Eklenen adresler eksiksiz ve doğru bilgilerle listelenir.
+Actual Result: Success
 
 
 
