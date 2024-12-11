@@ -1,0 +1,80 @@
+Test Alanı: Hesabım > Adres Defteri
+Amaç: Adres Defteri fonksiyonunun işlevselliğini test etmek ve olası hataları raporlamak.
+
+Test Case 1: Yeni Adres Ekleme
+Steps;
+  1.  Hesabınıza giriş yapın
+  2.  "Hesabım" sayfasına gidin.
+  3.  "Adres Defteri" sekmesini açın.
+  4.  "Yeni Adres Ekle" butonuna tıklayın.
+  5.  Zorunlu tüm alanları doldurun(Adres Adı, Adı, Soyadı, Ülke, Şehir, İlçe, Cep Telefonu, T.C. Kimlik No, Adres)
+  6.  Kaydet button tıklanır.
+
+Expected Result:
+  Adres başarıyla kayıt edilir ve listeye eklenir. Başarılı ekran mesajı görüntülenir.
+Actual result: Unsuccessful
+----------- Ekran mesajı görüntülenmedi
+
+Test Case 2: Eksik bilgiyle Adres Kaydetme
+Steps;
+  1.  "Yeni Adres Ekle" butonuna tıklayın.
+  2.  Zorunlu alanlardan herhangi birini veya hepsini teker teker deneyerek boş bırakın.
+  3.  "Kaydet" buttonuna tıklayın.
+
+Expected Result:
+  Her alanın kontrol edilerek boş geçilmesine izin verilmemeli ve uyarısı textbox altında gösterilmeli
+Actual result: Success
+
+Test Case 3: Var Olan Adresi Güncelleme
+Steps;
+  1.  Adres Defteri sekmesinde mevcut bir adresin yanında bulunan "Düzenle" butonuna tıklayın.
+  2.  Adres bilgilerini değiştirin(Örn; Şehir, Adres)
+  3.  "Kaydet" button tıklayın.
+
+Expected Result:
+  Adresin başarıyla güncellenir ve değişiklikler listeye yansır.
+
+Test Case 4: Adres Silme
+Steps:
+	1.	Adres Defteri sekmesinde bir adresin yanında bulunan “Sil” butonuna tıklayın.
+	2.	Silme işlemini onaylamak için çıkan uyarıda “Evet” butonuna tıklayın.
+
+Expected Result:
+Adres başarıyla silinir ve liste güncellenir.
+
+Test Case 5: Maksimum Adres Ekleme Kontrolü
+Steps:
+	1.	Adres Defteri’ne maksimum izin verilen sayıda adres ekleyin.
+	2.	Daha fazla adres eklemeyi deneyin.
+
+Expected Result:
+Sistem, “Maksimum adres sayısına ulaştınız” gibi bir hata mesajı gösterir ve yeni adres eklenmesine izin vermez.
+
+Test Case 6: Veri Doğrulama
+Steps:
+	1.	Posta kodu alanına geçersiz bir veri (örneğin harf) girin.
+	2.	“Kaydet” butonuna tıklayın.
+
+Expected Result:
+Sistem, yalnızca geçerli veri formatlarının kabul edildiğini belirten bir hata mesajı gösterir.
+
+
+Test Case 7: Farklı Tarayıcı ve Cihaz Uyumluluğu
+Steps:
+	1.	Chrome, Firefox ve Safari gibi farklı tarayıcılarda adres ekleme işlemini gerçekleştirin.
+	2.	Android ve iOS cihazlardan aynı işlemleri tekrarlayın.
+
+Expected Result:
+Adres Defteri fonksiyonu tüm tarayıcı ve cihazlarda sorunsuz çalışır.
+
+
+Test Case 8: Adresleri Listeleme
+Steps:
+	1.	Adres Defteri sekmesini açın.
+	2.	Daha önce eklediğiniz adreslerin listelendiğini kontrol edin.
+
+Expected Result:
+Eklenen adresler eksiksiz ve doğru bilgilerle listelenir.
+
+
+
